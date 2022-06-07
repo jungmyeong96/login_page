@@ -7,6 +7,9 @@ mongoose에는 스키마(schema)와 모델(model)이라는 개념이 존재한�
 */
 
 const mongoose = require('mongoose'); //몽구스디비로 데이터관리
+const bcrypt = require('bcrypt');
+const { use } = require('bcrypt/promises');
+const saltRounds = 10; //10자리인 salt를 이용하여 암호화
 
 const userSchema = mongoose.Schema({ //만들고자 하는 디비의 스키마형태
     name: {
@@ -37,6 +40,26 @@ const userSchema = mongoose.Schema({ //만들고자 하는 디비의 스키마�
     tokenExp: {
         type: Number
     }
+})
+
+userSchema.pre('save', function( next ) {
+    let user = this;
+
+    if (user.isModified('password')) {
+    //비밀번호를 암호화 시킨다.
+        bcrypt.genSalt(saltRounds, function(err, salt) { //암호화를 위한 salt생성
+            if(err) return next(err)
+            bcrypt.hash(user.password, salt, function(err, hash) {
+                if(err) return next(err)
+                user.password = hash;
+                next();
+            })
+            //bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+                // Store hash in your password DB.
+        // });
+        });
+    } else
+        next(); //next가 있어야 save로 넘어감
 })
 
 const User = mongoose.model('User', userSchema) //모델 설정
