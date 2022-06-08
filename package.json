@@ -1,7 +1,7 @@
 {
   "name": "loginpage",
   "version": "1.0.0",
-  "description": "",
+  "description": "Making login_page with react, JS, nodejs, mongoDB, redux for BoilerPlate",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -13,7 +13,18 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
-    "mongoose": "^6.3.5"
-  }
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.6",
+    "supervisor": "^0.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jungmyeong96/login_page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jungmyeong96/login_page/issues"
+  },
+  "homepage": "https://github.com/jungmyeong96/login_page#readme"
 }
