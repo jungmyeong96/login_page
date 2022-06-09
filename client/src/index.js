@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//import * as serviceWorker from './serviceWorker';
+
 import 'antd/dist/antd.css';
 /* redux 설정 */
 import { Provider } from 'react-redux';
-import { applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
 /* redux 미들웨어 */
 import promiseMiddleware from 'redux-promise';

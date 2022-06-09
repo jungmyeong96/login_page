@@ -14,8 +14,15 @@ import LoginPage from './components/views/LoginPage/LoginPage'
 
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
 
+import Auth from './hoc/auth'
+
 
 function App() { //APP을 구성 APP은 어떤 내용인지
+
+  const AuthLandingPage = Auth(LandingPage, null);
+  const AuthLoginPage = Auth(LoginPage, false);
+  const AuthRegisterPage = Auth(RegisterPage, false);
+
   return (
     <div className="App">
   <BrowserRouter>
@@ -44,9 +51,9 @@ function App() { //APP을 구성 APP은 어떤 내용인지
         */}
 
         <Routes>
-        <Route exact path="/" element = {<LandingPage/>}/>
-        <Route exact path="/login" element = {<LoginPage/>}/>
-        <Route exact path="/register" element = {<RegisterPage/>}/>
+        <Route exact path="/" element = {<AuthLandingPage/>}/>
+        <Route exact path="/login" element = {<AuthLoginPage/>}/>
+        <Route exact path="/register" element = {<AuthRegisterPage/>}/>
         </Routes>
         {/* <Routes>
         <Route exact path="/" element = {<Home/>}/>
