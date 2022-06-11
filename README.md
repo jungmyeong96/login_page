@@ -6,8 +6,12 @@ Making login_page with react, JS, nodejs, mongoDB, redux for BoilerPlate
 ## 실행 방법
 
 1. package.json확인 후, (client, main)모듈을 다운받기
-2. ``` npm run dev ``` 으로 실행
-3. http://localhost:3000/ , http://localhost:3000/login, http://localhost:3000/register 로 로그인 및 회원가입
+2.server의 config폴더 위치에 dev.js 생성 (conncet을 위해 DB주소를 따온뒤, name과 pw를 기입)
+	``` module.exports ={
+    mongoURI: \"mongodb+srv://{name}:{password}@loginpage.rs7lk.mongodb.net/?retryWrites=true"
+} ```
+3. ``` npm run dev ``` 으로 실행
+4. http://localhost:3000/ , http://localhost:3000/login, http://localhost:3000/register 로 로그인 및 회원가입
 
 <br />
 <br />

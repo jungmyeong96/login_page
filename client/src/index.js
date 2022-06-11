@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 //import * as serviceWorker from './serviceWorker';
 
-import 'antd/dist/antd.css';
+//import 'antd/dist/antd.css';
 /* redux 설정 */
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
