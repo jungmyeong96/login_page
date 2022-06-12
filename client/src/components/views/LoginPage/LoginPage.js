@@ -42,7 +42,7 @@ function LoginPage(props) {
        .then(response => {
            if (response.payload.loginSuccess){
                //props.history.push('/')
-               navigate('/');
+               navigate('/logout');
            } else {
                alert('Error');
            }

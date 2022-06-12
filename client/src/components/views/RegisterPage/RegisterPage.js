@@ -48,7 +48,7 @@ function RegisterPage() {
        let body = {
            email: Email,
            password: Password,
-           name: Name
+           name: Name,
        }
        dispatch(registerUser(body)) //디스패치를 하면 액션실행 후 리듀서가 호출됨
        .then(response => {

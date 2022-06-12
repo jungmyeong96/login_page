@@ -12,6 +12,8 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 
 import LoginPage from './components/views/LoginPage/LoginPage'
 
+import LogoutPage from './components/views/LogoutPage/LogoutPage'
+
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
 
 import Auth from './hoc/auth'
@@ -21,7 +23,9 @@ function App() { //APP을 구성 APP은 어떤 내용인지
 
   const AuthLandingPage = Auth(LandingPage, null);
   const AuthLoginPage = Auth(LoginPage, false);
+  const AuthLogoutPage = Auth(LogoutPage, true);
   const AuthRegisterPage = Auth(RegisterPage, false);
+  
 
   return (
     <div className="App">
@@ -53,6 +57,7 @@ function App() { //APP을 구성 APP은 어떤 내용인지
         <Routes>
         <Route exact path="/" element = {<AuthLandingPage/>}/>
         <Route exact path="/login" element = {<AuthLoginPage/>}/>
+        <Route exact path="/logout" element = {<AuthLogoutPage/>}/>
         <Route exact path="/register" element = {<AuthRegisterPage/>}/>
         </Routes>
         {/* <Routes>
